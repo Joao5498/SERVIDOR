@@ -1,0 +1,22 @@
+create database CHAT;
+
+use CHAT;
+
+create table usuario(
+id int primary key auto_increment,
+nome varchar(120),
+senha varchar(45),
+status varchar(45)
+);
+
+create table mensagem(
+id int primary key auto_increment,
+mensagem text,
+status varchar(45),
+id_remetente int,
+id_destinatario int,
+timestamp DATETIME,
+foreign key (id_remetente) references usuario(id),
+foreign key (id_desTinatario) references usuario(id)
+
+)
